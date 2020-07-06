@@ -1,0 +1,58 @@
+$columns: 12;
+$column-base-width: 100%/$columns;
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  .row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    [class*='col-'] {
+      width: $column-base-width;
+      min-height: 1px;
+    }
+
+    //extra small   max-width: 599px
+    @for $i from 1 through $columns {
+      .col-#{$i} {
+        width: $column-base-width * $i;
+      }
+    }
+    //small min-width: 600px
+    @for $i from 1 through $columns {
+      @include sm {
+        .col-sm-#{$i} {
+          width: $column-base-width * $i;
+        }
+      }
+    }
+    //medium min-width: 960px
+    @for $i from 1 through $columns {
+      @include md {
+        .col-md-#{$i} {
+          width: $column-base-width * $i;
+        }
+      }
+    }
+    //large min-width: 1280px
+    @for $i from 1 through $columns {
+      @include lg {
+        .col-lg-#{$i} {
+          width: $column-base-width * $i;
+        }
+      }
+    }
+    //extra-large: min-width: 1920px
+    @for $i from 1 through $columns {
+      @include xl {
+        .col-xl-#{$i} {
+          width: $column-base-width * $i;
+        }
+      }
+    }
+  }
+}

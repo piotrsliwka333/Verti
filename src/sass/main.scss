@@ -1,7 +1,11 @@
-@import "./reset/reset";
-h1 {
-  color: green;
-}
-h1 {
-  color: blue;
-}
+// generic
+@import "generic/reset";
+//settings
+@import "settings/mixins";
+@import "generic/grid";
+@import "settings/fonts";
+@import "settings/buttons";
+// elements
+
+
+
