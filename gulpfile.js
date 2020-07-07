@@ -1,17 +1,23 @@
-const gulp = require('gulp')
-const sass = require('gulp-sass')
-const sourcemaps = require('gulp-sourcemaps')
-const autoprefixer = require('gulp-autoprefixer')
-const browserSync = require('browser-sync').create()
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
+const autoprefixer = require('gulp-autoprefixer');
+const browserSync = require('browser-sync').create();
+var minifyCSS = require("gulp-minify-css");
 
 function compileSass(done) {
 	gulp.src('./src/sass/**/*.scss')
-		.pipe(sourcemaps.init())
-		.pipe(sass({output: 'compressed'}).on('error',sass.logError))
+		.pipe(sass({outputStyle: 'compressed'}))
 		.pipe(autoprefixer())
-		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('./src/css'));
 	done();
+}
+
+function compressCss(done) {
+	gulp.src('./src/css/*.css') // path to your file
+		.pipe(minifyCSS())
+		.pipe(gulp.dest('./minify-css'));
+	done()
 }
 
 function watcher(done) {
@@ -28,5 +34,6 @@ function reload(done) {
 	done()
 }
 
+exports.minifi = gulp.parallel(compressCss)
 exports.sass = gulp.parallel(compileSass)
 exports.default = gulp.parallel(compileSass,watcher)
