@@ -1,0 +1,68 @@
+.jumbotron {
+  padding: 30px 10px 15px 10px;
+  margin: 0 auto;
+  width: 95%;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.05);
+  @include md {
+    display: flex;
+    padding: 60px 70px;
+  }
+  .text-wrapper {
+    @include md {
+      width: 50%;
+    }
+    @include lg {
+      padding-right: 100px;
+    }
+  }
+  &__title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: $text-color;
+    @include md {
+      text-align: left;
+      font-size: 5rem;
+    }
+  }
+  &__subtitle {
+    text-align: center;
+    font-size: 2rem;
+    color: dimgrey;
+    font-weight: 300;
+    margin-bottom: 20px;
+    @include md {
+      text-align: left;
+      font-size: 4rem;
+      line-height: 4.5rem;
+    }
+  }
+  .buttons-wrapper {
+    @include md {
+      width: 50%;
+      padding-left: 100px;
+    }
+    @include lg {
+      padding-left: 220px;
+    }
+    .jumbotron__btn {
+      @include md {
+        padding: 25px 20px;
+        font-size: 3rem;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+      }
+      @include lg {
+        font-size: 3.5rem;
+      }
+    }
+    .jumbotron__btn:first-child {
+      margin-bottom: 20px;
+    }
+  }
+
+}

@@ -3,11 +3,12 @@
 //settings
 @import "settings/mixins";
 @import "generic/grid";
+@import "settings/colors";
 @import "settings/fonts";
 @import "settings/buttons";
-@import "settings/colors";
 @import "settings/base";
 // elements
 @import "elements/navigation";
+@import "elements/jumbotron";
 
 
