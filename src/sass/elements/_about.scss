@@ -1,0 +1,107 @@
+.about {
+  background-color: white;
+  padding: 40px 20px;
+
+  .container {
+    padding: 0;
+
+    .row {
+    }
+  }
+
+  &__text-wrapper {
+    padding-bottom: 40px;
+    border-bottom: 1px solid silver;
+    @include md {
+      order: 2;
+      border-bottom: none;
+    }
+
+  }
+
+  &__title {
+    font-size: 2.3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: $text-color;
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    color: lighten($text-color, 20%);
+    line-height: 2.5em;
+    margin-bottom: 20px;
+
+    b {
+      font-weight: bold;
+    }
+
+    &_underline {
+      color: $border-btn-color;
+      text-decoration: underline;
+    }
+  }
+
+  &__interesting-stuff-wrapper {
+    padding-top: 40px;
+    @include md {
+      order: 1;
+      padding-top: 0;
+      padding-right: 150px;
+
+    }
+  }
+
+  &__subtitle {
+    font-size: 2rem;
+    color: $text-color;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  &__images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  &__image-wrapper {
+    display: block;
+    width: 49%;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    overflow: hidden;
+
+    .about__image {
+      border-radius: 5px;
+      width: 100%;
+      transition: all 0.5s ease;
+    }
+  }
+
+  &__image-wrapper:hover .about__image {
+    transform: scale(1.2);
+    transition: all 0.5s ease;
+  }
+
+  &__image-wrapper:first-child {
+    margin-bottom: 10px;
+  }
+
+  &__image-wrapper:nth-child(2) {
+    margin-bottom: 10px;
+  }
+
+  &__btn_first {
+    @include md {
+      width: 50%;
+    }
+  }
+
+  &__btn_second {
+    @include md {
+      width: 50%;
+    }
+  }
+}
