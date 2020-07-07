@@ -5,10 +5,11 @@ document.addEventListener('DOMContentLoaded',function () {
 	const $pageNav = document.querySelector('.nav')
 	const $dropDownBtn = document.querySelector('#drop-down');
 	const $dropDownMenu = document.querySelector('#drop-down-menu');
-
+	const $main = document.querySelector('main')
 
 	$toggleBtn.addEventListener('click',function () {
 		$pageHeder.classList.toggle('page-heder-active-nav')
+		$main.classList.toggle('page-heder-active-nav')
 		$pageNav.classList.toggle('nav-active')
 		// when we remove class imediatly where will show white belt on the bottom coz our animation take 0.3ms
 		if($body.classList.contains('active-nav-body')) {
