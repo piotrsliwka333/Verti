@@ -1,0 +1,128 @@
+footer {
+  .information {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .container {
+      .row {
+        display: block;
+        @include md {
+          display: flex;
+        }
+      }
+    }
+
+    &-article {
+      padding-bottom: 40px;
+      border-bottom: 1px solid silver;
+      @include md {
+        border-bottom: none;
+      }
+
+      &__title {
+        font-size: 2rem;
+        color: $text-color;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      &__text {
+        width: 50%;
+        color: lighten($text-color, 10%);
+        font-size: 1.3rem;
+        line-height: 2.5rem;
+        text-decoration: underline;
+        @include sm {
+          width: 40%;
+        }
+        @include md {
+          width: 70%;
+        }
+      }
+    }
+
+    &-article:nth-child(1n + 2) {
+      padding-top: 40px;
+      @include md {
+        padding-top: 0;
+      }
+    }
+
+    .contact-article {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid silver;
+      @include md {
+        padding-top: 0;
+        border-bottom: none;
+      }
+
+      &__title {
+        font-size: 2rem;
+        color: $text-color;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      &__icon-wrapper {
+        margin-bottom: 20px;
+
+      }
+
+      &__icon {
+        color: $text-color;
+        text-decoration: none;
+        font-size: 3rem;
+
+        &:hover {
+          color: lighten($text-color, 10%);
+        }
+      }
+
+      .contact-article__info {
+        font-size: 1.1rem;
+        color: lighten($text-color, 15%);
+        margin-bottom: 8px;
+      }
+    }
+
+    .copyrights-wrapper {
+      padding-top: 20px;
+      @include md {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .copyrights {
+        margin-bottom: 10px;
+        display: block;
+        color: lighten($text-color, 15%);
+        @include md {
+          padding: 5px 0;
+        }
+
+      }
+
+      .copyrights:nth-child(2) {
+        @include md {
+          padding: 5px 10px;
+          border-left: 1px solid silver;
+          border-right: 1px solid silver;
+          margin: 0 10px;
+
+        }
+      }
+
+      .copyrights:last-child {
+        margin-bottom: 0;
+      }
+
+      .copyrights:first-child {
+        @include md {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

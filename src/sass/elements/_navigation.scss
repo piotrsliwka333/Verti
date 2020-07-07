@@ -10,7 +10,9 @@
     align-items: center;
     padding: 20px 10px 40px 10px;
   }
+
   .toggle-menu {
+    z-index: 2;
     position: absolute;
     background-color: $toggle-btn-color;
     border: none;
@@ -20,14 +22,17 @@
     padding: 3px 13px;
     left: 10px;
     top: 20px;
+
     &:hover {
-      background-color: lighten($toggle-btn-color,10%);
-      color: darken(#fff,2%);
+      background-color: lighten($toggle-btn-color, 10%);
+      color: darken(#fff, 2%);
     }
+
     @include md {
       display: none;
     }
   }
+
   .logo {
     margin-top: 40px;
     background-color: $logo-color;
@@ -43,6 +48,7 @@
     @include md {
       margin-top: 0;
     }
+
     &::after {
       position: absolute;
       color: dimgrey;
@@ -60,15 +66,16 @@
       }
     }
   }
+
   .nav {
     position: absolute;
-    width: 40vw;
+    width: 50vw;
     top: 0;
     height: 100vh;
     box-shadow: $mobile-nav-box-shadow;
     background-color: #fff;
     padding: 0 23px 0 20px;
-    left: -40vw;
+    left: -50vw;
     transition: all .3s ease;
     overflow: auto;
     @include md {
@@ -92,29 +99,32 @@
         display: flex;
         justify-content: space-between;
       }
-      &__element {
-       .nav-list__link {
-        display: block;
-         padding: 15px 0;
-         font-size: 1.3rem;
-         font-weight: 900;
-         text-decoration: none;
-         color: $text-color;
 
-         @extend %elements-border;
-         @include md {
-           border-radius: 10px;
-           padding: 15px 20px;
-           transition: background-color 0.5s;
-         }
-         &:hover {
-           @include md {
-             background-color: white;
-             transition: background-color 0.5s;
-           }
-         }
-       }
+      &__element {
+        .nav-list__link {
+          display: block;
+          padding: 15px 0;
+          font-size: 1.3rem;
+          font-weight: 900;
+          text-decoration: none;
+          color: $text-color;
+
+          @extend %elements-border;
+          @include md {
+            border-radius: 10px;
+            padding: 15px 20px;
+            transition: background-color 0.5s;
+          }
+
+          &:hover {
+            @include md {
+              background-color: white;
+              transition: background-color 0.5s;
+            }
+          }
+        }
       }
+
       &__element:nth-child(1) {
         a {
           @include md {
@@ -122,6 +132,7 @@
             color: white;
             transition: background-color 0.5s;
           }
+
           &:hover {
             background-color: transparent;
             color: $text-color;
@@ -131,14 +142,17 @@
       }
     }
   }
+
   .nav-active {
     transition: all 0.3s ease;
   }
 }
+
 .nav-list__element:nth-child(2) {
   position: relative;
 
 }
+
 .nav-list__element:nth-child(2):hover .dropdown-level {
   opacity: 1;
   transition: all 0.3s ease;
@@ -147,8 +161,9 @@
 .active-nav-body {
   overflow: hidden;
 }
+
 .page-heder-active-nav {
-  transform: translateX(40vw);
+  transform: translateX(50vw);
   transition: all 0.5s ease;
 }
 
@@ -156,6 +171,7 @@
   height: 0;
   overflow: hidden;
   transition: all 0.3s ease-out;
+
   &::before {
     position: absolute;
     content: '';
@@ -171,6 +187,7 @@
 
     }
   }
+
   @include md {
     transition: all 0.3s ease;
     opacity: 0;
@@ -191,13 +208,15 @@
   &__element {
 
   }
+
   &__element:first-child {
-   a {
-     @include md {
-       border-radius: 6px 6px 0 0;
-     }
-   }
+    a {
+      @include md {
+        border-radius: 6px 6px 0 0;
+      }
+    }
   }
+
   &__element:last-child {
     a {
       @include md {
@@ -205,6 +224,7 @@
       }
     }
   }
+
   &__link {
     display: block;
     text-decoration: none;
@@ -213,9 +233,11 @@
     font-size: 1.3rem;
     font-weight: 300;
     border-bottom: 1px solid silver;
+
     &:hover {
-      background-color: darken(#fff,2%);
+      background-color: darken(#fff, 2%);
     }
+
     @include md {
       padding: 15px 40px;
       width: 200px;
